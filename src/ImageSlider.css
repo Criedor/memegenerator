@@ -1,0 +1,21 @@
+.grid-wrapper-image-slider {
+  display: inline-grid;
+  grid-template-rows: 1fr;
+  grid-column: 2 / 3;
+  width:100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.image-slider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+
+.img-from-api {
+  height: 250px;
+  margin-right: 5px;
+  width: auto;
+}

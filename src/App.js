@@ -1,11 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import ImageInputs from './ImageInputs'
+import ImageSlider from './ImageSlider'
 import './App.css';
 
 function App() {
 const [data, setData] = useState()
 
+const [search, setSearch] = useState();
 
-
+const handleInput = (input) => {
+    setSearch(data.filter(item => !item.name.includes(input) ? null : item.name.includes(input)
+    
+    ))
+    console.log(search)
+}
 
 
 useEffect( () => {
@@ -28,10 +36,11 @@ useEffect( () => {
 },[]);
 
 
-
   return (
     <>
     <div className="App">
+      <ImageInputs onHandleInput={handleInput}/>
+      <ImageSlider getData={data}/>
     </div>
     </>
   );
