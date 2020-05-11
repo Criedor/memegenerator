@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import Preview from "./Preview"
+import ImageOutput from './ImageOutput';
 
 function App() {
 const [data, setData] = useState()
+const [selectedMeme, setSelectedMeme] = useState("https://i.imgflip.com/1bij.jpg")
 
 
 
@@ -31,7 +34,10 @@ useEffect( () => {
 
   return (
     <>
+
     <div className="App">
+      <Preview meme_img={selectedMeme}   />
+      <ImageOutput />
     </div>
     </>
   );
