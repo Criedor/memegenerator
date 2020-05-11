@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import ImageInputs from './ImageInputs'
+import ImageSlider from './ImageSlider'
 import './App.css';
 import Preview from "./Preview"
 import ImageOutput from './ImageOutput';
@@ -7,8 +9,14 @@ function App() {
 const [data, setData] = useState()
 const [selectedMeme, setSelectedMeme] = useState("https://i.imgflip.com/1bij.jpg")
 
+const [search, setSearch] = useState();
 
-
+const handleInput = (input) => {
+    setSearch(data.filter(item => !item.name.includes(input) ? null : item.name.includes(input)
+    
+    ))
+    console.log(search)
+}
 
 
 useEffect( () => {
@@ -31,11 +39,12 @@ useEffect( () => {
 },[]);
 
 
-
   return (
     <>
 
     <div className="App">
+      <ImageInputs onHandleInput={handleInput}/>
+      <ImageSlider getData={data}/>
       <Preview meme_img={selectedMeme}   />
       <ImageOutput />
     </div>
