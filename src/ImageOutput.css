@@ -1,4 +1,5 @@
 .ImageOutput {
+    grid-column: 2 / 3;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
