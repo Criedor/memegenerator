@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "memify",
+=======
+  "name": "memegenerator",
+>>>>>>> 3f8a4fd47d3a0e3e953a4c6073cb4a45e625241e
   "version": "0.1.0",
   "private": true,
   "dependencies": {
