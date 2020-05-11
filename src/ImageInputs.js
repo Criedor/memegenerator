@@ -5,19 +5,14 @@ import './ImageInput.css';
 
 const ImageInputs = ({ onHandleInput }) => {
 
-    const enterKeyInput = input => {
-        if (input.keyCode === 13) {
-            onHandleInput();
-        }
-    }
-
     return (
         <div className='flex-wrap'>
+        <form onSubmit={ (event) => onHandleInput(event)}>
         <input className='search' 
         type="text" 
         placeholder='Search meme'
-        onSubmit={(input) => enterKeyInput(input.value)}
         />
+        </form>
         <button className='button upload'>Upload</button>
         </div>
     )

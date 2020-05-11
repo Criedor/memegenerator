@@ -8,14 +8,17 @@ import ImageOutput from './ImageOutput';
 function App() {
 const [data, setData] = useState()
 const [selectedMeme, setSelectedMeme] = useState("https://i.imgflip.com/1bij.jpg")
-
 const [search, setSearch] = useState();
 
-const handleInput = (input) => {
-    setSearch(data.filter(item => !item.name.includes(input) ? null : item.name.includes(input)
-    
-    ))
-    console.log(search)
+const handleSelectMeme = (event) => {
+    setSelectedMeme(event.currentTarget.src)    
+
+}
+
+const handleInput = (event) => {
+    event.preventDefault();
+    //console.log(event.currentTarget.children[0].value)
+    setSearch(data.filter(item => item.name.includes(event.currentTarget.children[0].value)))
 }
 
 
@@ -44,7 +47,7 @@ useEffect( () => {
 
     <div className="App">
       <ImageInputs onHandleInput={handleInput}/>
-      <ImageSlider getData={data}/>
+      <ImageSlider getData={data} getSearch={search} onHandleSelectedMeme={handleSelectMeme}/>
       <Preview meme_img={selectedMeme}   />
       <ImageOutput />
     </div>
