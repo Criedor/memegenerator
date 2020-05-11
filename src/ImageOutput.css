@@ -1,0 +1,10 @@
+.ImageOutput {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.button{
+    height: 40px;
+
+}

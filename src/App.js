@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Preview from "./preview"
+import Preview from "./Preview"
+import ImageOutput from './ImageOutput';
 
 function App() {
 const [data, setData] = useState()
@@ -36,6 +37,7 @@ useEffect( () => {
 
     <div className="App">
       <Preview meme_img={selectedMeme}   />
+      <ImageOutput />
     </div>
     </>
   );
